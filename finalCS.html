@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<meta charset = "utf-8">
+		<title>My personal website</title>
+		<script src="https://kit.fontawesome.com/9ed59df408.js" crossorigin="anonymous"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		
+		
+		body {
+			font-family: Arial, sans-serif;
+			line-height: 1.4;
+			color: #333;
+			overflow-x: hidden;
+		}
+		
+		.container {
+			max-width: 1100px;
+			margin: auto;
+		}
+		
+		.text-primary {
+			color: #3693ff;
+		}
+		
+		.bg-light {
+			background: #f4f4f4;
+			color: #333;
+		}
+		
+		.bg-dark {
+			background: #333;
+			color: #fff;
+		}
+		
+		#navbar {
+		display: flex;
+		justify-content: space-between;
+		background: #333;
+		color: #fff;
+		padding: 1.5rem 1rem;
+		position: sticky;
+		top: 0;
+		z-index: 1;
+		border-bottom: 3px solid #3693ff;
+		}
+		
+		#navbar ul {
+			display: flex;
+			align-items: center;
+			list-style: none;
+		}
+		
+		#navbar h2 a{
+			color: #fff;
+			text-decoration: none;
+		}
+		
+		#navbar li a {
+		text-decoration: none;
+		color: #fff;
+		padding: 1rem;
+		font-size: 1.3rem;
+		margin: 0 0.5rem;
+		border-radius: 5px;
+		}
+		
+		#navbar li a:hover {
+			background-color: #3694ff;
+		}
+		
+		#showcase {
+			background: url(https://i.pinimg.com/originals/68/3f/3f/683f3ff4910420e826aa5b3318ff52c8.gif) no-repeat center center/cover;
+			height: 91.7vh;
+			}
+			
+			.showcase-content{
+			display: flex;
+			flex-direction: column;
+			text-align: center;
+			align-items: center;
+			justify-content: center;
+			position: absolute;
+			top: 81px;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			color: #3693ff;
+			}
+			
+			.showcase-content h1 {
+			font-size: 4rem;
+			margin-bottom: 2rem;
+			}
+			
+			.showcase-content .btn {
+				font-size: 1.5rem;
+				padding: 1rem 10rem;
+				transition: color 0.3s, background 0.3s;
+			}
+			
+			.showcase-content .btn:hover {
+				background: #3693ff;
+				color: #fff;
+			}
+			
+			.btn {
+				color: #3693ff;
+				text-decoration: none;
+				display: inline-block;
+				padding: 1rem 2rem;
+				border: 1px solid #3693ff;
+				border-radius: 10px;
+				font-weight: bold;
+				}
+				
+			#about {
+			padding: 5rem 0;
+			}
+			
+			#about h2, #services h2 {
+			text-align: center;
+			font-size: 3rem;
+			margin-bottom: 3rem;
+			}
+			
+			#about h3 {
+			font-size: 2rem;
+			margin-bottom: 1rem;
+			}
+			
+			#about p .lead {
+				margin-bottom: 1rem;
+				}
+				
+				#about .about-content {
+				display: flex;
+				}
+				
+				#about .about-text,
+				#about .about-image {
+				flex: 1;
+				}
+				
+				#about .about-text {
+					text-align: justify;
+				}
+			
+				#about .about-image img {
+				display: block;
+				margin-left: auto;
+				width: 75%;
+				border-radius: 40%;
+				margin-top: 60px;
+			}
+			
+			#services {
+				padding: 5rem 0;
+			}
+			
+			#services h3 {
+				text-align: center;
+				margin-bottom: 2rem;
+				font-size: 2rem;
+			}
+			
+			#services .boxes {
+				display: flex;
+			}
+			
+			#services .box {
+				background: #fff;
+				flex: 1;
+				padding: 3rem;
+				margin: 0 3rem;
+				border-radius: 10px;
+				box-shadow: 2px 2px 5px #d1d1d1;
+				font-size: 1.3rem;
+			}
+			
+			#testimonials {
+				background: url(https://cdn.pixabay.com/photo/2017/08/30/01/05/milky-way-2695569__480.jpg) no-repeat center center/cover;
+				height: 100vh;
+			}
+			.testimonials-bg {
+				position: absolute;
+				height: 100%;
+				width: 100%;
+				background: rgba(0,0,0,0.6);
+				padding: 5rem 0;
+				}
+			
+			#testimonials h2 {
+				text-align: center;
+				font-size: 3rem;
+				margin-bottom: 3rem;
+				color: #fff;
+			}
+			
+			#testimonials .boxes {
+				display: flex;
+				flex-direction: column;
+				}
+				
+			#testimonials .box {
+				background: rgba(54, 147, 255, 0.7);
+				display: flex;
+				padding: 2rem;
+				align-items: center;
+				border-radius: 15px;
+				}
+				
+			#testimonials .box:first-child, #testimonials .box:nth-child(2) {
+				margin-bottom: 3rem;
+			}
+			
+			#testimonials .box img {
+				border-radius: 50%;
+				margin-right: 2rem;
+				}
+				
+				#testimonials p {
+					color: #fff;
+					 font-family: Arial, sans-serif;
+					}
+			
+			#contact {
+				padding: 5rem 0;
+			}
+			
+			#contact h2 {
+				text-align: center;
+				font-size: 3rem;
+				margin-bottom: 8rem;
+			}
+			
+			#contact h3 {
+				text-align: center;
+				font-size: 2.5rem;
+				margin: 3rem 0;
+				margin-top: 5rem;
+			}
+			
+			#contact .form-box {
+				background: #fff;
+				padding: 3rem;
+				box-shadow: 2px 2px 5px #d1d1d1;
+				border-radius: 10px;
+			}
+			
+			#contact .form-group {
+				margin-bottom: 2rem;
+			}
+			
+			#contact .form-group label {
+				display: block;
+				margin-bottom: 0.5rem;
+				width: 80%;
+				margin-left: 10%;
+				font-size: 1.1rem;
+			}
+			
+			#contact .form-group input,
+			#contact .form-group textarea {
+				width: 80%;
+				margin-left: 10%;
+				font-size: 1.3rem;
+				padding: 1rem;
+				border: 0.5px solid #333;
+				border-radius: 5px;
+			}
+			
+			#contact .form-group textarea {
+				font-family: Arial, sans-serif;
+			}
+			
+			#contact .contact-btn {
+				width: 80%;
+				margin-left: 10%;
+				display: inline-block;
+				padding: 1rem 3rem;
+				border: none;
+				border-radius: 5px;
+				font-size: 1.5rem;
+				background: #3693ff;
+				color: #fff;
+				margin-bottom: 2rem;
+				cursor: pointer;
+			}
+			
+			#contact .form-container {
+				position: relative;
+			}
+			
+			#contact .mail-icon {
+			font-size: 4rem;
+			background: #3693ff;
+			color: #fff;
+			display: inline-block;
+			padding: 1.5rem 2rem;
+			border-radius: 50%;
+			position: absolute;
+			top: -7%;
+			left: 45%;
+			}
+			
+			footer {
+				padding: 2.5rem; 
+			}
+			
+			footer p {
+			text-align: center;
+			}
+			
+			
+		</style>
+	</head>
+	<body id="home">
+	
+		<nav id="navbar">
+			<h2><a href="#home"><span class="text-primary">Daniel</span> Valle-dubon</a></h2>
+			<ul>
+				<li><a href="#home">Home</a></li>
+				<li><a href="#about">About</a></li>
+				<li><a href="#services">Services</a></li>
+				<li><a href="#testimonials">Testimonials</a></li>
+				<li><a href="#contact">Contact</a></li>
+			</ul>
+		</nav>
+	
+	<header id="showcase">
+		<div class="showcase-content">
+			<div class="container"></div>
+				<h1>Take Your Business to the <br> Next Level</span></h1>
+				<a href="#about" class="btn">FIND OUT HOW</a>
+			</div>
+		</div>
+	</header>
+	
+	<section id="about">
+		<div class="container">
+			<h2 class="about-heading">Get to know <span class="text-primary">Me</span></h2>
+			<div class="about-content">
+				<div class="about-text">
+				<h3>A little bit <span class="text-primary">About myself</span></h3>
+				<p class="lead"> I am currently a freshman at Santa Monica College. I am pursuing a major in computer science and have currently taken a few related classes. I am learning C and html.</p>
+				<p class="lead"> Actualmente soy un estudiante de primer año en Santa Monica College. Estoy cursando una especialización en ciencias de la computación y actualmente he tomado algunas clases relacionadas. Estoy aprendiendo C y html.</p>
+				<p class="lead"> Je suis actuellement en première année au Santa Monica College. Je poursuis une majeure en informatique et j'ai actuellement suivi quelques cours connexes. J'apprends le C et le html.</p>
+				<p class="lead"> Ik ben momenteel een eerstejaarsstudent aan het Santa Monica College. Ik volg een major in computerwetenschappen en heb momenteel een paar gerelateerde lessen gevolgd. Ik ben C en html aan het leren.</p>
+				<p class="lead"> Ich bin derzeit ein Neuling am Santa Monica College. Ich studiere Informatik im Hauptfach und habe derzeit einige verwandte Kurse belegt. Ich lerne C und HTML.</p>
+				<p class="lead"> Attualmente sono una matricola al Santa Monica College. Sto perseguendo una specializzazione in informatica e attualmente ho seguito alcuni corsi correlati. Sto imparando C e html.</p>
+				<p class="lead"> 我目前是圣莫尼卡学院的一名新生。我正在攻读计算机科学专业，目前已经参加了一些相关课程。我正在学习 C 和 html。</p>
+				
+				</div>
+		
+			<div class="about-image">
+				<img src="..\imagesForFinal\mainPic.jpg" alt="Picture of me">
+		</div>
+			</div>
+	</section>
+	
+		<section id="services" class="bg-light">
+			<div class="container">
+				<h2>Here is what <span class="text-primary"> I have to offer</h2>
+				<div class="boxes">
+					<div class="box">
+						<h3><span class="text-primary">Awesome Modern Website</span></h3>
+							<div class="feature">
+								<i class="fas fa-check"></i> Modern Layout Design
+							</div>
+								<div class="feature">
+								<i class="fas fa-check"></i> Responsive website design
+							</div>
+								<div class="feature">
+								<i class="fas fa-check"></i> Search engine optimization
+							</div>
+								<div class="feature">
+								<i class="fas fa-check"></i> Browser compatibility
+							</div>
+					</div>
+					<div class="box">
+						<h3><span class="text-primary">Free hosting &amp; Maintenance</span></h3>
+							<div class="feature">
+								<i class="fas fa-check"></i> Free domain name
+							</div>
+								<div class="feature">
+								<i class="fas fa-check"></i> Free hosting
+							</div>
+								<div class="feature">
+								<i class="fas fa-check"></i> Free SSL certificate
+							</div>
+								<div class="feature">
+								<i class="fas fa-check"></i> Personal assistance
+							</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<section id="testimonials">
+			<div class="testimonials-bg">
+				<div class="container">
+					<h2>What my clients say <span class="text-primary">About me</span></h2>
+					<div class="boxes">
+						<div class="box">
+							<img src="..\imagesForFinal\mord.png" alt="Customer 1 photo">
+							<p>"Website is awesome!"- Mordecai</p>
+						</div>
+						<div class="box">
+							<img src="..\imagesForFinal\ye.jpg" alt="Customer 2 photo">
+							<p>"I would be lost without Daniel's websites."- Yeezy</p>
+						</div>
+						<div class="box">
+							<img src="..\imagesForFinal\rig.png" alt="Customer 3 photo">
+							<p>"It's incredible. You've saved our business! I love your system. I would be lost without your website."- Rigby</p>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<section id="contact" class="bg-light">
+			<div class="container">
+				<h2>Get your <span class="text-primary">High Quality Website</span> Now</h2>
+				<div class="form-container">
+					<div class="mail-icon"><i class="fas fa-envelope"></i></div>
+					<div class="form-box">
+						<h3>Shoot me a <span class="text-primary">Message</span></h3>
+						<form>
+							<div class="form-group">
+								<label for="first-name">First Name</label>
+								<input type="text" id="first-name" placeholder="enter your first name">
+							</div>
+							<div class="form-group">
+								<label for="last-name">Last Name</label>
+								<input type="text" id="last-name" placeholder="enter your last name">
+							</div>
+							<div class="form-group">
+								<label for="email">Email</label>
+								<input type="email" id="email" placeholder="enter your email">
+							</div>
+							<div class="form-group">
+								<label for="message">Message</label>
+								<textarea rows="7" id="message" placeholder="Enter comments"></textarea>
+							</div>
+							<input type="submit" value="send message" class="contact-btn">
+						</form>
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		<footer class="bg-dark">
+			<p>this website was made for school</p>
+			<p>
+<a href="http://jigsaw.w3.org/css-validator/check/referer">
+    <img style="border:0;width:88px;height:31px"
+        src="http://jigsaw.w3.org/css-validator/images/vcss-blue"
+        alt="Valid CSS!" />
+    </a>
+</p>
+		</footer>
+		
+		
+		<script>
+		 $(document).ready(function(){   
+               $('#navbar a, .btn').on('click', function(event) {               
+                    if (this.hash !== "") {
+                        event.preventDefault();
+                        var hash = this.hash;
+                        $("html, body").animate({
+                            scrollTop: $(hash).offset().top
+                        }, 500, function(){       
+                        });
+                    }
+                });
+            });
+
+		</script>
+	</body>
+</html>

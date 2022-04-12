@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		<meta charset = "utf-8">
+		<title>Project 2</title>
+		<style type = "text/css">
+		h1 	{
+		font-size: 20pt;
+		}
+		ol 	{
+		font-size: 20pt;
+		}
+		li 	{
+		font-size: 20pt;
+		}
+		hl.test {
+			margin-left: 50px;
+		}
+		ol.test {
+			margin-left: 50px;
+		}
+		li.test {
+			margin-left: 50px;
+		}
+		</style>
+	</head>
+	<body>
+	<h1>Daniel Valledubon</h1>
+	<img src = "https://i.pinimg.com/originals/e0/3d/5b/e03d5b812b2734826f76960eca5b5541.jpg" width = "205" height = "200" alt="picture of a panda">
+	<ol>
+		<li>Video games</li>
+		<li>Food</li>
+	</ol>
+	<script>
+	var favoriteThing;
+	var favoriteThing2;
+	var google;
+	
+	favoriteThing = window.prompt("Enter your favorite thing");
+	favoriteThing2 = window.prompt("Enter your second favorite thing");
+	document.write("<ol><li>" + favoriteThing + "</li><li>" + favoriteThing2 + "</li></ol>");
+	google = window.prompt("Do you like google?");
+	if(google == "yes") {
+	document.write('<img src="https://grafik.agency/wp-content/uploads/Google-G.jpg">');
+	}
+	else if (google == "no"){
+	}
+	else{
+	alert("enter yes or no");
+	}
+	</script>
+	</body>
+</html>
